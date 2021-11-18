@@ -1,3 +1,4 @@
+# MQTT
 ![Screenshot-from-2021-11-17-17-02-57](https://thanos.savoirguinee.com/content/images/2021/11/Screenshot-from-2021-11-17-17-02-57.png)
 Utilisé pour le transfert de **Machine-to-Machine (M2M)**, MQTT est considéré comme l'un des principaux protocoles de messagerie de l'internet des objets, mais côté industriel (**IoT)**. Il est open source, léger (**en tête de messages de 2 octets**), faible utilisation de la bande passante du réseau (**93 fois plus rapides que le HTTP**), faible consommation d'énergie (**11 fois moins pour envoyer et 170 pour ne recevoir que le HTTP**) et fiable (mécanisme natif de Qos, acronyme de Quality of Service).
 
