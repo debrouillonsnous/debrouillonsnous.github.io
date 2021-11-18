@@ -12,6 +12,7 @@ Utilisé par nombreux acteurs dans le monde Facebook, openstack, geospatial, Bos
 
 MQTT focntionne sur le principe de **publication/abonnement**(publish/subscribe)
 
+
 ## C’est quoi un broker MQTT ?
 
 
