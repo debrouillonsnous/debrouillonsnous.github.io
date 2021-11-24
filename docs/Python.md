@@ -33,11 +33,22 @@ python3.9 --version
 ```
 ## Mon premier programme
 En haut nous avons installé python3.9, maintenant écrivons notre premier programme en python.
-## GIF
+![script](../../img/hello_world.gif?raw=true "Title")
 
 ## The Basics
 ### Les Variables
+Une variable est une place où on peut stoker des variables
+Vous pouvez stoker tout ce que vous voulez
+```
+Nom = "Barry"
+print(Nom)
+age = 3
+taille = 2.01
+liste_nombre = [1,2,3,4]
 
+Nom , age, taille = "Barry", 3, 2.01
+```
+<img src="../../img/variables.gif" alt="drawing" style="width:50%; height:300px"/>
 ## Operators
 ## List comprehension
 ## github copilot
