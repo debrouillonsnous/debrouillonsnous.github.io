@@ -292,6 +292,3 @@ Egalement si vous voulez afficher des séparateurs entre vos éléments, plusieu
 
 <a href="https://reactnative.dev/docs/getting-started">React native doc</a>
 
-```
-
-```
