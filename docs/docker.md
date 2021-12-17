@@ -137,6 +137,8 @@ services:
 ## Conclusion
 
 <img src="../../img/done.gif" alt="drawing" style="width:50%; height:300px"/>
+
+
 Nous arrivons à la fin de notre tutorial, pour plus d'informations je vous recommande la documentation du Docker dont j'ai mis le liens en bas dans les ressources. 
 
 **Sources**:
