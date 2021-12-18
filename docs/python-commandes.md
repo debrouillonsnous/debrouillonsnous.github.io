@@ -7,3 +7,4 @@ Générez un "requirements file" , puis installez les packages à partir de celu
 ```
 python3 -m pip freeze >> requirements.txt
 ```
+
