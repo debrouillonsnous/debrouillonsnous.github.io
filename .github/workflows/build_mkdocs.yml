@@ -30,5 +30,10 @@ jobs:
           docker images
           ls -al
           printenv
+          docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p  ${{ secrets.DOCKERHUB_PASSWORD }}
+          docker build -t kbosow/debrouillons-nous-web:${GITHUB_REF_NAME} .
+          docker build -t kbosow/debrouillons-nous-web:${GITHUB_SHA} . 
+          docker push kbosow/debrouillons-nous-web:${GITHUB_REF_NAME}
+          docker push kbosow/debrouillons-nous-web:${GITHUB_SHA}
 
 
