@@ -20,3 +20,12 @@ jobs:
       - run: pip install mkdocs
       - run: mkdocs gh-deploy --force
       - run: echo "🎉 The job was successful."
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List files in the repository
+        run: |
+          docker ps
+          docker images
+          
+
