@@ -23,10 +23,12 @@ jobs:
   build-and-push:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: List files in the repository
         run: |
           docker ps
           docker images
           ls -al
+          printenv
 
 
