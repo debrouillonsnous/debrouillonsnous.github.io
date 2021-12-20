@@ -56,9 +56,14 @@ docker pull alpine:3.15.0
 docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
 ```
 Exemple: 
+```
 docker run -it --pid=container:my-redis my_strace_docker_image bash
-
+```
 ### Créeation d'un volume
+```
+docker volume create [OPTIONS] [VOLUME]
+```
+Exemple:
 ```
 docker run -d \
   --name devtest \
@@ -66,6 +71,7 @@ docker run -d \
   nginx:latest
 ```
 ### Dockerfile
+Bahhh ce fichier contient la manière dont on crée notre image, au lieu de le faire en ligne de commande on peut le faire dans un fichier dont la maintenance est facile.
 ```
 FROM python:3.7-alpine
 WORKDIR /code
@@ -90,6 +96,9 @@ Appliquez les autorisations exécutables au binaire <a href="https://docs.docker
 ```
 sudo chmod +x /usr/local/bin/docker-compose
 ```
+#### Utilisation
+Rappelons que ce fichier contient notre docker run commande
+
 ** Exemple de docker-compose **
 ```
 version: "3.9"
@@ -104,7 +113,7 @@ services:
 ### Commandes utiles
 
 <ol>
-    <li>Container Management CLIs 
+    <li><i style="color:green; font-weight:bold; font-size:18px">Container Management CLIs </i>
         <ul>
             <li><strong> docker run image :</strong> crée le container et le lance</li>
             <li><strong> docker start container:</strong> lance le container</li>
@@ -115,14 +124,14 @@ services:
             <li><strong> docker rm container:</strong> detruit le container</li>
         </ul>
     </li>
-    <li>Inspection du conteneur
+    <li><i style="color:green; font-weight:bold; font-size:18px">Inspection du conteneur</i>
         <ul>
             <li><strong> docker ps :</strong> liste l'ensemble des container en cours d'execution</li>
             <li><strong> docker ps -a:</strong> liste tous containers</li>
             <li><strong> docker logs [-f] container:</strong> liste les logs </li>
         </ul>
     </li>
-    <li>Interagir avec le conteneur et images
+    <li><i style="color:green; font-weight:bold; font-size:18px">Interagir avec le conteneur et images</i>
         <ul>
             <li><strong> docker attach container :</strong> rejoint le container en cours mais si on l'arret il tue le container en cours</li>
             <li><strong> docker exec container args..:</strong> lance un container</li>

@@ -8,10 +8,10 @@ J'ai decouvert React et je partage l'aventure avec vous &#129335;.
 
 c'était un monde dans une planete &#127776; lointaine mais proche de Angular.
 
+---
 ## Démarrer
 
 ---
-
 Hi &#128075;!!!! Alors installons tout ce dont on a besoin pour commencer
 
 ### Installe NodeJs
@@ -47,53 +47,57 @@ expo init books
 expo start
 
 ```
-
+---
 ## Les composants capitaux
--------
-Nous avons 7 composants principaux
-- un **composant** est une classe(transmettre des props) ou une fonction(mais elle renvoie rarement des props).
+---
+Nous avons 7 composants principaux  
+Un **composant** est une classe(transmettre des props) ou une fonction(mais elle renvoie rarement des props).
 
 La manière la plus simple de definir un component est de créer une fonction JavaScript.
 
 Nous appelons ces composants "composants de fonction" car il s'agit littéralement de fonctions JavaScript.
 ```
 
-import React from 'react';
-import { Text, View } from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
 
 const HelloWorldApp = () => {
-return (
-<View style={{
+  return (
+    <View
+      style={{
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-<Text>Hello, world!</Text>
-</View>
-);
-}
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Text>Hello, world!</Text>
+    </View>
+  );
+};
+
 
 export default HelloWorldApp;
 
 ```
 Les deux composants ci-dessus sont équivalents du point de vue de React.
 ```
-
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import React, { Component } from "react";
+import { Text, View } from "react-native";
 
 class HelloWorldApp extends Component {
-render() {
-return (
-<View style={{
+  render() {
+    return (
+      <View
+        style={{
           flex: 1,
           justifyContent: "center",
-          alignItems: "center"
-        }}>
-<Text>Hello, world!</Text>
-</View>
-);
-}
+          alignItems: "center",
+        }}
+      >
+        <Text>Hello, world!</Text>
+      </View>
+    );
+  }
 }
 
 export default HelloWorldApp;
@@ -106,13 +110,12 @@ export default HelloWorldApp;
 signifie que nous aurons deux accolades "{{}}" au niveau de style et on ne va pas l'écrire sur plusieurs lignes
 La première signifie JavaScript et le second car c'est en inline
 ```
-
 //Dans App.js
 import React from "react";
 import { Text, View } from "react-native";
 
 const App = () => {
-return <View style={{ borderWidth: 1, height: 150, width: 150 }}></View>;
+  return <View style={{ borderWidth: 1, height: 150, width: 150 }}></View>;
 };
 export default App;
 
@@ -140,32 +143,31 @@ React n'accept pas les textes brutes donc il faut un composant texte pour la man
 ### 3- Le composant StyleSheet
 comme son nom l'indique il permet d'ecrire du css plus stylé &#128526;
 ```
-
 //Dans App.js
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
 const App = () => {
-return (
-<View style={styles.container}>
-<Text style={styles.text}>Bonjour Monsieur</Text>
-</View>
-);
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Bonjour Monsieur</Text>
+    </View>
+  );
 };
 const styles = StyleSheet.create({
-container: {
-borderWidth: 1,
-height: "100%",
-width: "100%",
-backgroundColor: "green",
-justifyContent: "center",
-alignItems: "center",
-},
-text: {
-color: "white",
-fontSize: 20,
-fontWeight: "bold",
-},
+  container: {
+    borderWidth: 1,
+    height: "100%",
+    width: "100%",
+    backgroundColor: "green",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "bold",
+  },
 });
 export default App;
 
@@ -176,49 +178,48 @@ export default App;
 <div class="warning">Un composant sans enfant&#128551;? Ehh oui c'est quand on le ferme juste à la fin avec un "/" </div>
 Au fur et à mesure qu'on ecrit dans un champs de saisie React fait la mise à jour donc pour eviter d'effacer ce que l'on écrit on utilise state.
 ```
-
 //Dans App.js
 import React, { useState } from "react";
 import { Text, View, StyleSheet, TextInput } from "react-native";
 
 const App = () => {
-const [state, setState] = useState("");
-return (
-<View style={styles.container}>
-<Text style={styles.text}>Bonjour Monsieur</Text>
-<TextInput style={styles.input}
-placeholder="Saisir du texte"
-value={state}
-onChangeText={(value)=>setState(value)}
-/>
-</View>
-);
+  const [state, setState] = useState("");
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Bonjour Monsieur</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Saisir du texte"
+        value={state}
+        onChangeText={(value) => setState(value)}
+      />
+    </View>
+  );
 };
 const styles = StyleSheet.create({
-container: {
-flex:1,
-borderWidth: 1,
-flexDirection:"column",
-height: "100%",
-width: "100%",
-backgroundColor: "green",
-justifyContent: "center",
-alignItems: "center",
-},
-text: {
-color: "white",
-fontSize: 20,
-fontWeight: "bold",
-paddingBottom:20,
-},
-input:{
-borderWidth:1,
-height:30,
-width:300,
-fontSize:25,
-color:"black"
-
-}
+  container: {
+    flex: 1,
+    borderWidth: 1,
+    flexDirection: "column",
+    height: "100%",
+    width: "100%",
+    backgroundColor: "green",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  text: {
+    color: "white",
+    fontSize: 20,
+    fontWeight: "bold",
+    paddingBottom: 20,
+  },
+  input: {
+    borderWidth: 1,
+    height: 30,
+    width: 300,
+    fontSize: 25,
+    color: "black",
+  },
 });
 export default App;
 
@@ -235,9 +236,8 @@ Attention,ne pensez pas que les props d'un component ne peuvent pas changer. <br
 C'est là qu'intervient **"state"** il nous permet de récuperer les nouvelles données avec setState et indiquer à React que le component a besoin d'être re-rendu avec ces  nouvelles données.
 
 ```
-
 const [tasks, setTask] = useState([
-{ title: "Nouvelle tache", completed: false },
+  { title: "Nouvelle tache", completed: false },
 ]);
 
 ```
@@ -255,9 +255,9 @@ puis on lui met du css
 ```
 
 logo: {
-width: 66,
-height: 58,
-margin: 10,
+  width: 66,
+  height: 58,
+  margin: 10,
 },
 
 ```
@@ -283,9 +283,26 @@ Il permet de faire defiler notre écran quand on aura beaucoup d'éléments à a
 FlatList fait en sorte que lorsque nos informations sont sur le point d'apparaître, il supprime les éléments qui défilent hors de l'écran pour économiser de la mémoire et du temps de traitement.  
 
 Egalement si vous voulez afficher des séparateurs entre vos éléments, plusieurs colonnes, un chargement de défilement infini ou tout autre nombre d'autres fonctionnalités qu'il prend en charge immédiatement. 
-```
 
+Code source: <a href="https://github.com/debrouillonsnous/React-native/tree/main"> 👉here</a>
+
+---
+## Navigation
+---
+### Installation​
+Installons les packqges dont ont a besoin dans le projet
 ```
+sudo npm install @react-navigation/native
+```
+```
+sudo expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+```
+sudo npm install @react-navigation/stack
+```
+## Les touchables:
+### TouchableOpacity
+----
 **Sources:**
 
 <a href="https://openclassrooms.com/fr/courses/4902061-developpez-une-application-mobile-react-native/4915721-manipulez-le-state">openClassRooms</a>
