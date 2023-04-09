@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Docker - Debrouillons-nous</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Docker";
+        var mkdocs_page_input_path = "docker.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Debrouillons-nous
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">About US</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../MQTT/">MQTT</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Python/">Python</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../Ubuntu-commandes/">Quelques commandes Ubuntu</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../apache-benchmark/">Apache Benchmark</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../callback-function/">Callback fonction</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Docker</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#introduction">Introduction</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#fonctionnement">Fonctionnement</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exemple-dimage">Exemple d'image</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creation-dun-container">Création d'un container</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#creeation-dun-volume">Créeation d'un volume</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#dockerfile">Dockerfile</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#docker-compose">Docker-compose</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#installation_1">Installation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#utilisation">Utilisation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commandes-utiles">Commandes utiles</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../github-actions/">Github actions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../gitlab_ci/">GitLab actions</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../happy-path-and-edge-cases/">Happy path and edge cases</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../login-avec-google-react/">React: login avec google</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../npm-vs-npx/">NPM vs NPX:</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../python-commandes/">Commandes utiles</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../react-native/">React Native</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../readmeee/">Readmeee</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../spring-boot/">Spring boot</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../tests/">Tests</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Debrouillons-nous</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Docker</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="docker">Docker</h1>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<p><lottie-player src="https://assets2.lottiefiles.com/private_files/lf30_35uv2spq.json"  background="transparent"  speed="1"  style="width: 500px; height: 500px;"  loop  autoplay></lottie-player></p>
+<h2 id="introduction">Introduction</h2>
+<p>🤔
+Bahh je dirais que c'est comme le bateau qui contient beacoups de containers, ils sont sur le même beateau mais chacun est isolé des autres selon son contenu mais ils peuvent communiquer entre eux par des canaux bien définis(le réseau=&gt; network). </p>
+<p>Un contenair docker est une image en execution. ohhh a new word 😵? Oui mais je vous l'explique, une image Docker représente le système de fichiers, sans les processus. ... Par contre un conteneur est l'exécution d'une image : il possède la copie du système de fichiers de l'image, ainsi que la capacité de lancer des processus. En gros, c'est un OS, avec lequel vous pouvez interagir</p>
+<p><i style="color:green; font-size:30px">Quoi encore? </i>
+<img src="../../img/thinking-girls.gif" alt="drawing" style="width:50%; height:300px"/></p>
+<p>😲 <strong> Les volumes Docker: </strong> c'est un endroit qu'on crée pour préserver les données générées par le conteneur en cours d'exécution . Ils  sont stockés sur l'hôte, indépendamment du cycle de vie du conteneur. Cela permet aux utilisateurs de sauvegarder facilement des données et de partager des systèmes de fichiers entre les conteneurs</p>
+<h2 id="fonctionnement">Fonctionnement</h2>
+<h3 id="installation">Installation</h3>
+<p>Je rappel que si vous avez Windows vous allez avoir besoin de ce tutorial <a href="https://docs.docker.com/desktop/windows/install/"> installe on windows</a> 
+Pour Lunix:
+Enlever l'ancienne version si existe</p>
+<pre><code>sudo apt-get remove docker docker-engine docker.io containerd runc 
+
+</code></pre>
+<p>Installe Docker:</p>
+<pre><code> sudo apt-get update
+ sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+</code></pre>
+<p>Rajouter les GPG Key : </p>
+<pre><code>
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+</code></pre>
+<p>si vous n'avez pas curl installé alors faite le
+<a href="https://docs.docker.com/get-started/">ici</a>  </p>
+<h3 id="exemple-dimage">Exemple d'image</h3>
+<p>Recupere une image de docker hub voici le liens où trouver <a href="https://www.docker.com/products/docker-hub"> la liste des images que vous pouvez recuperer les images</a>  </p>
+<pre><code>docker pull ubuntu:22.04
+</code></pre>
+<p><strong> Alpine </strong>
+Alpine Linux est une distribution Linux. Qui est legère et est parfait pour les petits système d'exploitation l'image ne fait que 5 Mo.</p>
+<pre><code>docker pull alpine:3.15.0
+</code></pre>
+<h3 id="creation-dun-container">Création d'un container</h3>
+<pre><code>docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]
+</code></pre>
+<p>Exemple: </p>
+<pre><code>docker run -it --pid=container:my-redis my_strace_docker_image bash
+</code></pre>
+<h3 id="creeation-dun-volume">Créeation d'un volume</h3>
+<pre><code>docker volume create [OPTIONS] [VOLUME]
+</code></pre>
+<p>Exemple:</p>
+<pre><code>docker run -d \
+  --name devtest \
+  -v myvol2:/app \
+  nginx:latest
+</code></pre>
+<h3 id="dockerfile">Dockerfile</h3>
+<p>Bahhh ce fichier contient la manière dont on crée notre image, au lieu de le faire en ligne de commande on peut le faire dans un fichier dont la maintenance est facile.</p>
+<pre><code>FROM python:3.7-alpine
+WORKDIR /code
+ENV FLASK_APP=app.py
+ENV FLASK_RUN_HOST=0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+COPY requirements.txt requirements.txt
+RUN pip install -r requirements.txt
+EXPOSE 5000
+COPY . .
+CMD [&quot;flask&quot;, &quot;run&quot;]
+</code></pre>
+<h3 id="docker-compose">Docker-compose</h3>
+<h4 id="installation_1">Installation</h4>
+<p>Vous trouverez ici tout ce qu'il vous faut sur <a href="https://docs.docker.com/compose/gettingstarted/">  Docker-compose </a></p>
+<pre><code> sudo curl -L &quot;https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+</code></pre>
+<p>Appliquez les autorisations exécutables au binaire <a href="https://docs.docker.com/compose/install/"> ici la doc </a></p>
+<pre><code>sudo chmod +x /usr/local/bin/docker-compose
+</code></pre>
+<h4 id="utilisation">Utilisation</h4>
+<p>Rappelons que ce fichier contient notre docker run commande</p>
+<p><strong> Exemple de docker-compose </strong></p>
+<pre><code>version: &quot;3.9&quot;
+services:
+  web:
+    build: .
+    ports:
+      - &quot;5000:5000&quot;
+  redis:
+    image: &quot;redis:alpine&quot;
+</code></pre>
+<h3 id="commandes-utiles">Commandes utiles</h3>
+<ol>
+    <li><i style="color:green; font-weight:bold; font-size:18px">Container Management CLIs </i>
+        <ul>
+            <li><strong> docker run image :</strong> crée le container et le lance</li>
+            <li><strong> docker start container:</strong> lance le container</li>
+            <li><strong> docker stop container:</strong> arrête le container</li>
+            <li><strong> docker kill container:</strong> tue le container</li>
+            <li><strong> docker restart container:</strong> arrête le container et le lance</li>
+            <li><strong> docker pause container:</strong> suspend le container</li>
+            <li><strong> docker rm container:</strong> detruit le container</li>
+        </ul>
+    </li>
+    <li><i style="color:green; font-weight:bold; font-size:18px">Inspection du conteneur</i>
+        <ul>
+            <li><strong> docker ps :</strong> liste l'ensemble des container en cours d'execution</li>
+            <li><strong> docker ps -a:</strong> liste tous containers</li>
+            <li><strong> docker logs [-f] container:</strong> liste les logs </li>
+        </ul>
+    </li>
+    <li><i style="color:green; font-weight:bold; font-size:18px">Interagir avec le conteneur et images</i>
+        <ul>
+            <li><strong> docker attach container :</strong> rejoint le container en cours mais si on l'arret il tue le container en cours</li>
+            <li><strong> docker exec container args..:</strong> lance un container</li>
+            <li><strong> docker images:</strong> liste toutes les images </li>
+            <li><strong> docker pull repo[:tag]:</strong> pull une image du registry</li>
+            <li><strong> docker push repo[:tag]:</strong> push une image du registry</li>
+            <li><strong> docker images:</strong> liste toutes les images </li>
+        </ul>
+    </li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+<p><img src="../../img/done.gif" alt="drawing" style="width:50%; height:300px"/></p>
+<p>Nous arrivons à la fin de notre tutorial, pour plus d'informations je vous recommande la documentation du Docker dont j'ai mis le liens en bas dans les ressources. </p>
+<p><strong>Sources</strong>:</p>
+<p><a href="https://dockerlabs.collabnix.com/docker/cheatsheet/">Docker cheat sheet</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../callback-function/" class="btn btn-neutral float-left" title="Callback fonction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../github-actions/" class="btn btn-neutral float-right" title="Github actions">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../callback-function/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../github-actions/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
